@@ -2,7 +2,8 @@
 
 My own personal projects that I've made or are currently making as a hobby and for fun.
 
-WorkoutApp is a weightlifting training log app in progress. It will work on android and I am currently coding it in Android Studio.
+WorkoutApp is a weightlifting training log app in progress. It will work on android and I am currently coding it in Android Studio. I have included the XML layout
+files as well as the Java files.
 
 To-do list volume 1 is a to do list application that works exclusively in console. Saves and loads to a file and has login for distinct users.
 
