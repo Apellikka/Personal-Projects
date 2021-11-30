@@ -10,6 +10,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     private Button newWorkoutButton;
+    private Button newExerciseButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,13 +21,26 @@ public class MainActivity extends AppCompatActivity {
         newWorkoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openActivity2();
+                openActivityNewWorkout();
+            }
+        });
+
+        newExerciseButton = findViewById(R.id.button2);
+        newExerciseButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivityAddExercise();
             }
         });
     }
 
-    public void openActivity2() {
-        Intent intent = new Intent(this, Activity2.class);
+    public void openActivityNewWorkout() {
+        Intent intent = new Intent(this, AddWorkoutActivity.class);
+        startActivity(intent);
+    }
+
+    public void openActivityAddExercise() {
+        Intent intent = new Intent(this, AddExerciseActivity.class);
         startActivity(intent);
     }
 }
