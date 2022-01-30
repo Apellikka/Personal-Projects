@@ -2,6 +2,7 @@ package com.example.weightliftingtracker;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,6 +24,7 @@ public class newWorkoutAct extends AppCompatActivity {
     private TextView reps;
     private TextView sets;
     private Button finishWorkout;
+    private Button showList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,9 +64,22 @@ public class newWorkoutAct extends AppCompatActivity {
                 addToMap(currentDate, exerciseList);
             }
         });
+
+        showList = (Button) findViewById(R.id.showList);
+        showList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openShowListAct();
+            }
+        });
     }
 
     public void addToMap(String key, ArrayList<String> list) {
         workOuts.put(key, list);
+    }
+
+    public void openShowListAct() {
+        Intent intent = new Intent(this, showListActivity.class);
+        startActivity(intent);
     }
 }
